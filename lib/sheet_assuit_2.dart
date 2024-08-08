@@ -1,9 +1,13 @@
-int print1ToN(int n) {
+import 'dart:io';
+
+List<int> print1ToN(int n) {
+  List<int> numbers = [];
   for (int i = 1; i <= n; i++) {
-    print(i);
+    numbers.add(i);
   }
-  return n;
+  return numbers;
 }
+
 List<int> evenNumbers(int n) {
   List<int> numev = [];
   for (int i = 1; i <= n; i++) {
@@ -16,6 +20,7 @@ List<int> evenNumbers(int n) {
   }
   return numev;
 }
+
 Map<String, int> countNumbers(List<int> numbers) {
   int evenCount = 0;
   int oddCount = 0;
@@ -43,6 +48,7 @@ Map<String, int> countNumbers(List<int> numbers) {
     'Negative': negativeCount,
   };
 }
+
 String fixedPassword(int n) {
   if (n == 1999) {
     return "Correct";
@@ -50,6 +56,7 @@ String fixedPassword(int n) {
     return "Wrong";
   }
 }
+
 int max(List<int> numbers) {
   int maxx = numbers[0];
 
@@ -60,33 +67,46 @@ int max(List<int> numbers) {
   }
 
   return maxx;
-  List<String> multiplicationTable(int n) {
-    List<String> results = [];
-    for (int i = 1; i <= 12; i++) {
-      results.add('$n * $i = ${n * i}');
-    }
-    return results;
+}
+
+List<String> multiplicationTable(int n) {
+  List<String> results = [];
+  for (int i = 1; i <= 12; i++) {
+    results.add('$n * $i = ${n * i}');
+  }
+  return results;
+}
+
+int calculateFrom1ToN(int n) {
+  return (n * (1 + n)) ~/ 2;
+}
+
+void main() {
+  List<int> numbers1ToN = print1ToN(5);
+  for (int number in numbers1ToN) {
+    print(number);
   }
 
-  void main() {}void main() {
-  /* print1ToN(5);
   List<int> numev = evenNumbers(10);
   for (int i in numev) {
     print(i);
   }
-  List<int> numbers = [-5, 0, -3,-4, 12];
 
+  List<int> numbers = [-5, 0, -3, -4, 12];
   Map<String, int> result = countNumbers(numbers);
-
   print("Even: ${result['Even']}");
   print("Odd: ${result['Odd']}");
   print("Positive: ${result['Positive']}");
   print("Negative: ${result['Negative']}");
-  fixedPassword(1999);
-  print(max([1, 8, 5, 7, 5]));*/
 
+  print(fixedPassword(1999));
+
+  print(max([1, 8, 5, 7, 5]));
 
   List<String> table = multiplicationTable(2);
   for (String line in table) {
     print(line);
-  }}
+  }
+
+  print(calculateFrom1ToN(3));
+}
