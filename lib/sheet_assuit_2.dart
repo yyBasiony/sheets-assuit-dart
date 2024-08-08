@@ -43,12 +43,23 @@ Map<String, int> countNumbers(List<int> numbers) {
     'Negative': negativeCount,
   };
 }
+void fixedPassword(int n) {
+  while (true) {
+    if (n == 1999) {
+      print("Correct");
+      break;
+    } else {
+      print("Wrong");
+    }
+  }
+}
+
 void main() {
   /* print1ToN(5);
   List<int> numev = evenNumbers(10);
   for (int i in numev) {
     print(i);
-  }*/
+  }
   List<int> numbers = [-5, 0, -3,-4, 12];
 
   Map<String, int> result = countNumbers(numbers);
@@ -56,5 +67,6 @@ void main() {
   print("Even: ${result['Even']}");
   print("Odd: ${result['Odd']}");
   print("Positive: ${result['Positive']}");
-  print("Negative: ${result['Negative']}");
+  print("Negative: ${result['Negative']}");*/
+  fixedPassword(1999);
 }
