@@ -60,7 +60,15 @@ int max(List<int> numbers) {
   }
 
   return maxx;
-}void main() {
+  List<String> multiplicationTable(int n) {
+    List<String> results = [];
+    for (int i = 1; i <= 12; i++) {
+      results.add('$n * $i = ${n * i}');
+    }
+    return results;
+  }
+
+  void main() {}void main() {
   /* print1ToN(5);
   List<int> numev = evenNumbers(10);
   for (int i in numev) {
@@ -74,6 +82,11 @@ int max(List<int> numbers) {
   print("Odd: ${result['Odd']}");
   print("Positive: ${result['Positive']}");
   print("Negative: ${result['Negative']}");
-  fixedPassword(1999);*/
-  print(max([1, 8, 5, 7, 5]));
-}
+  fixedPassword(1999);
+  print(max([1, 8, 5, 7, 5]));*/
+
+
+  List<String> table = multiplicationTable(2);
+  for (String line in table) {
+    print(line);
+  }}
