@@ -77,10 +77,13 @@ List<String> multiplicationTable(int n) {
   return results;
 }
 
-int calculateFrom1ToN(int n) {
-  return (n * (1 + n)) ~/ 2;
+int factorial(int num) {
+  int fact = 1;
+  for (int i = 1; i <= num; i++) {
+    fact *= i;
+  }
+  return fact;
 }
-
 void main() {
   List<int> numbers1ToN = print1ToN(5);
   for (int number in numbers1ToN) {
@@ -108,5 +111,5 @@ void main() {
     print(line);
   }
 
-  print(calculateFrom1ToN(3));
+  print(factorial(5));
 }
