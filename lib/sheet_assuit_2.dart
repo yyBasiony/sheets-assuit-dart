@@ -84,6 +84,7 @@ int factorial(int num) {
   }
   return fact;
 }
+
 bool isPrime(int n) {
   if (n <= 1) {
     return false;
@@ -95,6 +96,20 @@ bool isPrime(int n) {
   }
   return true;
 }
+
+bool isPalindrome(String n) {
+  int i = 0;
+  int j = n.length - 1;
+  while (i < j) {
+    if (n[i] != n[j]) {
+      return false;
+    }
+    i++;
+    j--;
+  }
+  return true;
+}
+
 void main() {
   List<int> numbers1ToN = print1ToN(5);
   for (int number in numbers1ToN) {
@@ -123,5 +138,7 @@ void main() {
   }
 
   print(factorial(5));
-  print("Is  a prime? ${isPrime(11) ? 'YES' : 'NO'}");
- }
+  print("Is 11 a prime? ${isPrime(11) ? 'YES' : 'NO'}");
+
+  print("Is palindrom? ${isPalindrome(12121.toString()) ? 'YES' : 'NO'}");
+}
