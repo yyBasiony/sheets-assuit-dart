@@ -43,18 +43,24 @@ Map<String, int> countNumbers(List<int> numbers) {
     'Negative': negativeCount,
   };
 }
-void fixedPassword(int n) {
-  while (true) {
-    if (n == 1999) {
-      print("Correct");
-      break;
-    } else {
-      print("Wrong");
-    }
+String fixedPassword(int n) {
+  if (n == 1999) {
+    return "Correct";
+  } else {
+    return "Wrong";
   }
 }
+int max(List<int> numbers) {
+  int maxx = numbers[0];
 
-void main() {
+  for (int num in numbers) {
+    if (num > maxx) {
+      maxx = num;
+    }
+  }
+
+  return maxx;
+}void main() {
   /* print1ToN(5);
   List<int> numev = evenNumbers(10);
   for (int i in numev) {
@@ -67,6 +73,7 @@ void main() {
   print("Even: ${result['Even']}");
   print("Odd: ${result['Odd']}");
   print("Positive: ${result['Positive']}");
-  print("Negative: ${result['Negative']}");*/
-  fixedPassword(1999);
+  print("Negative: ${result['Negative']}");
+  fixedPassword(1999);*/
+  print(max([1, 8, 5, 7, 5]));
 }
