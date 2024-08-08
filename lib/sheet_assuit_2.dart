@@ -84,6 +84,17 @@ int factorial(int num) {
   }
   return fact;
 }
+bool isPrime(int n) {
+  if (n <= 1) {
+    return false;
+  }
+  for (int i = 2; i < n; i++) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
 void main() {
   List<int> numbers1ToN = print1ToN(5);
   for (int number in numbers1ToN) {
@@ -112,4 +123,5 @@ void main() {
   }
 
   print(factorial(5));
-}
+  print("Is  a prime? ${isPrime(11) ? 'YES' : 'NO'}");
+ }
